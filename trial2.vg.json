@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "COVID cases over the World!",
+    "data": {"url": "https://raw.githubusercontent.com/Srihitha-26/FIT3179_A2/main/worldometer_data.csv"},
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Country/Region",
+            "type": "nominal"
+          },
+          "y": {
+            "aggregate": "mean",
+            "field": "TotalDeaths",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {"field": "Country/Region", "type": "nominal"},
+            {"field": "TotalDeaths", "type": "quantitative"}
+          ]
+        }
+      },
+      {
+        "mark": "rule",
+        "encoding": {
+          "y": {
+            "aggregate": "mean",
+            "field": "TotalDeaths",
+            "type": "quantitative"
+          },
+          "color": {"value": "red"},
+          "size": {"value": 2}
+        }
+      }
+    ]
+  }
+  
